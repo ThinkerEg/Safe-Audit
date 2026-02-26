@@ -25,6 +25,7 @@
             this.btnAccounts = new System.Windows.Forms.Button();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.btn_ExpensesList = new System.Windows.Forms.Button();
             this.pnlSidebar.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.SuspendLayout();
@@ -32,6 +33,7 @@
             // pnlSidebar
             // 
             this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.pnlSidebar.Controls.Add(this.btn_ExpensesList);
             this.pnlSidebar.Controls.Add(this.btnSettlement);
             this.pnlSidebar.Controls.Add(this.btnExit);
             this.pnlSidebar.Controls.Add(this.btnTransfers);
@@ -135,6 +137,19 @@
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "نظام الخزينة والتدقيق";
             // 
+            // btn_ExpensesList
+            // 
+            this.btn_ExpensesList.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_ExpensesList.FlatAppearance.BorderSize = 0;
+            this.btn_ExpensesList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ExpensesList.ForeColor = System.Drawing.Color.White;
+            this.btn_ExpensesList.Location = new System.Drawing.Point(0, 240);
+            this.btn_ExpensesList.Name = "btn_ExpensesList";
+            this.btn_ExpensesList.Size = new System.Drawing.Size(200, 60);
+            this.btn_ExpensesList.TabIndex = 5;
+            this.btn_ExpensesList.Text = "إدارة المصروفات";
+            this.btn_ExpensesList.Click += new System.EventHandler(this.btn_ExpensesList_Click);
+            // 
             // FRM_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,5 +178,6 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnSettlement;
+        private System.Windows.Forms.Button btn_ExpensesList;
     }
 }

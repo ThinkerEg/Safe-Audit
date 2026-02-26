@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Safe_Audit</RootNamespace>
     <AssemblyName>Safe Audit</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="BL\CLS_Accounts.cs" />
     <Compile Include="BL\CLS_AuditLogs.cs" />
+    <Compile Include="BL\CLS_Expenses.cs" />
     <Compile Include="BL\CLS_Permissions.cs" />
     <Compile Include="BL\CLS_Settlements.cs" />
     <Compile Include="BL\HelperMethods.cs" />
@@ -71,6 +72,12 @@
     </Compile>
     <Compile Include="PL\FRM_Add_Settlement.Designer.cs">
       <DependentUpon>FRM_Add_Settlement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_ExpensesList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_ExpensesList.Designer.cs">
+      <DependentUpon>FRM_ExpensesList.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\FRM_Main.cs">
       <SubType>Form</SubType>
@@ -94,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Add_Settlement.resx">
       <DependentUpon>FRM_Add_Settlement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_ExpensesList.resx">
+      <DependentUpon>FRM_ExpensesList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Main.resx">
       <DependentUpon>FRM_Main.cs</DependentUpon>

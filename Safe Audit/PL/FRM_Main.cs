@@ -110,5 +110,10 @@ namespace Safe_Audit.PL
         {
             HelperMethods.OpenChildForm(new FRM_Add_Settlement());
         }
+
+        private void btn_ExpensesList_Click(object sender, EventArgs e)
+        {
+             HelperMethods.OpenChildForm(new FRM_ExpensesList());
+        }
     }
 }
