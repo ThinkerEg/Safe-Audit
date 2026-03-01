@@ -56,6 +56,12 @@
     <Compile Include="BL\GlobalUser.cs" />
     <Compile Include="BL\HelperMethods.cs" />
     <Compile Include="DAL\DataAccessLayer.cs" />
+    <Compile Include="PL\FRM_CashierDebts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_CashierDebts.Designer.cs">
+      <DependentUpon>FRM_CashierDebts.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_EditLogs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Add_Settlement.resx">
       <DependentUpon>FRM_Add_Settlement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_CashierDebts.resx">
+      <DependentUpon>FRM_CashierDebts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_EditLogs.resx">
       <DependentUpon>FRM_EditLogs.cs</DependentUpon>

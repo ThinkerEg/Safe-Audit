@@ -47,6 +47,7 @@
             this.lblExpVal = new System.Windows.Forms.Label();
             this.lblExpTitle = new System.Windows.Forms.Label();
             this.dgvBalances = new System.Windows.Forms.DataGridView();
+            this.btn_CashierDebts = new System.Windows.Forms.Button();
             this.pnlSidebar.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.pnlTop.SuspendLayout();
@@ -63,6 +64,7 @@
             // pnlSidebar
             // 
             this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.pnlSidebar.Controls.Add(this.btn_CashierDebts);
             this.pnlSidebar.Controls.Add(this.btn_FinancialMovements);
             this.pnlSidebar.Controls.Add(this.btn_EditLogs);
             this.pnlSidebar.Controls.Add(this.btn_Search_Settlements);
@@ -415,6 +417,19 @@
             this.dgvBalances.Size = new System.Drawing.Size(957, 448);
             this.dgvBalances.TabIndex = 5;
             // 
+            // btn_CashierDebts
+            // 
+            this.btn_CashierDebts.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_CashierDebts.FlatAppearance.BorderSize = 0;
+            this.btn_CashierDebts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_CashierDebts.ForeColor = System.Drawing.Color.White;
+            this.btn_CashierDebts.Location = new System.Drawing.Point(0, 320);
+            this.btn_CashierDebts.Name = "btn_CashierDebts";
+            this.btn_CashierDebts.Size = new System.Drawing.Size(200, 40);
+            this.btn_CashierDebts.TabIndex = 9;
+            this.btn_CashierDebts.Text = "\"الحركات المالية\" (قبض وصرف)";
+            this.btn_CashierDebts.Click += new System.EventHandler(this.btn_CashierDebts_Click);
+            // 
             // FRM_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -480,5 +495,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button btn_FinancialMovements;
+        private System.Windows.Forms.Button btn_CashierDebts;
     }
 }

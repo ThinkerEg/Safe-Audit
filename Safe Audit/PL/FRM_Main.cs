@@ -190,5 +190,10 @@ namespace Safe_Audit.PL
             
                   HelperMethods.OpenChildForm(new FRM_FinancialMovements());
         }
+
+        private void btn_CashierDebts_Click(object sender, EventArgs e)
+        {
+            HelperMethods.OpenChildForm(new FRM_CashierDebts());
+        }
     }
 }

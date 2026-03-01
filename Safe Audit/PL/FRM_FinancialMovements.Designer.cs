@@ -19,6 +19,9 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.grpMain = new System.Windows.Forms.GroupBox();
+            this.lblAccountBalance = new System.Windows.Forms.Label();
+            this.lblCashierBalance = new System.Windows.Forms.Label();
+            this.cmbCashier = new System.Windows.Forms.ComboBox();
             this.txtResponsible = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,7 +58,7 @@
             this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(151, 15);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(159, 21);
+            this.lblTitle.Size = new System.Drawing.Size(139, 21);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "إدارة الحركات المالية";
             // 
@@ -75,6 +78,9 @@
             // 
             // grpMain
             // 
+            this.grpMain.Controls.Add(this.lblAccountBalance);
+            this.grpMain.Controls.Add(this.lblCashierBalance);
+            this.grpMain.Controls.Add(this.cmbCashier);
             this.grpMain.Controls.Add(this.txtResponsible);
             this.grpMain.Controls.Add(this.label6);
             this.grpMain.Controls.Add(this.label1);
@@ -95,9 +101,38 @@
             this.grpMain.TabStop = false;
             this.grpMain.Text = "بيانات العملية المالية";
             // 
+            // lblAccountBalance
+            // 
+            this.lblAccountBalance.AutoSize = true;
+            this.lblAccountBalance.Location = new System.Drawing.Point(30, 34);
+            this.lblAccountBalance.Name = "lblAccountBalance";
+            this.lblAccountBalance.Size = new System.Drawing.Size(22, 15);
+            this.lblAccountBalance.TabIndex = 14;
+            this.lblAccountBalance.Text = ".....";
+            // 
+            // lblCashierBalance
+            // 
+            this.lblCashierBalance.AutoSize = true;
+            this.lblCashierBalance.Location = new System.Drawing.Point(30, 168);
+            this.lblCashierBalance.Name = "lblCashierBalance";
+            this.lblCashierBalance.Size = new System.Drawing.Size(22, 15);
+            this.lblCashierBalance.TabIndex = 13;
+            this.lblCashierBalance.Text = ".....";
+            // 
+            // cmbCashier
+            // 
+            this.cmbCashier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCashier.FormattingEnabled = true;
+            this.cmbCashier.Location = new System.Drawing.Point(30, 187);
+            this.cmbCashier.Name = "cmbCashier";
+            this.cmbCashier.Size = new System.Drawing.Size(360, 23);
+            this.cmbCashier.TabIndex = 12;
+            this.cmbCashier.Visible = false;
+            this.cmbCashier.SelectedIndexChanged += new System.EventHandler(this.cmbCashier_SelectedIndexChanged);
+            // 
             // txtResponsible
             // 
-            this.txtResponsible.Location = new System.Drawing.Point(30, 115);
+            this.txtResponsible.Location = new System.Drawing.Point(30, 187);
             this.txtResponsible.Name = "txtResponsible";
             this.txtResponsible.Size = new System.Drawing.Size(360, 23);
             this.txtResponsible.TabIndex = 1;
@@ -106,9 +141,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(283, 93);
+            this.label6.Location = new System.Drawing.Point(281, 167);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 17);
+            this.label6.Size = new System.Drawing.Size(109, 17);
             this.label6.TabIndex = 11;
             this.label6.Text = "المسؤول (الكاشير):";
             // 
@@ -116,9 +151,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(300, 30);
+            this.label1.Location = new System.Drawing.Point(303, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 17);
+            this.label1.Size = new System.Drawing.Size(87, 17);
             this.label1.TabIndex = 10;
             this.label1.Text = "الحساب المتأثر:";
             // 
@@ -130,12 +165,13 @@
             this.cmbAccount.Name = "cmbAccount";
             this.cmbAccount.Size = new System.Drawing.Size(360, 23);
             this.cmbAccount.TabIndex = 0;
+            this.cmbAccount.SelectedIndexChanged += new System.EventHandler(this.cmbAccount_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(321, 158);
+            this.label2.Location = new System.Drawing.Point(318, 100);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 17);
             this.label2.TabIndex = 8;
@@ -145,18 +181,19 @@
             // 
             this.cmbTransType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTransType.FormattingEnabled = true;
-            this.cmbTransType.Location = new System.Drawing.Point(30, 180);
+            this.cmbTransType.Location = new System.Drawing.Point(30, 122);
             this.cmbTransType.Name = "cmbTransType";
             this.cmbTransType.Size = new System.Drawing.Size(360, 23);
             this.cmbTransType.TabIndex = 2;
+            this.cmbTransType.SelectedIndexChanged += new System.EventHandler(this.cmbTransType_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(347, 222);
+            this.label3.Location = new System.Drawing.Point(348, 222);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 17);
+            this.label3.Size = new System.Drawing.Size(42, 17);
             this.label3.TabIndex = 6;
             this.label3.Text = "المبلغ:";
             // 
@@ -174,14 +211,15 @@
             this.numAmount.Size = new System.Drawing.Size(360, 27);
             this.numAmount.TabIndex = 3;
             this.numAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numAmount.ValueChanged += new System.EventHandler(this.numAmount_ValueChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(312, 290);
+            this.label4.Location = new System.Drawing.Point(317, 290);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 17);
+            this.label4.Size = new System.Drawing.Size(73, 17);
             this.label4.TabIndex = 4;
             this.label4.Text = "تاريخ الحركة:";
             // 
@@ -196,9 +234,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(294, 355);
+            this.label5.Location = new System.Drawing.Point(289, 355);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 17);
+            this.label5.Size = new System.Drawing.Size(101, 17);
             this.label5.TabIndex = 2;
             this.label5.Text = "ملاحظات إضافية:";
             // 
@@ -266,5 +304,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNotes;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.ComboBox cmbCashier; // التعريف النهائي
+        private System.Windows.Forms.Label lblCashierBalance;
+        private System.Windows.Forms.Label lblAccountBalance;
     }
 }

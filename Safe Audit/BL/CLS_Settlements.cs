@@ -195,5 +195,19 @@ namespace Safe_Audit.BL
             DAL.Close();
             return dt;
         }
+        public decimal GetCashierRemainingDebt(int cashierID)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@CashierID", SqlDbType.Int) { Value = cashierID };
+
+            DataTable dt = DAL.SelectData("SP_GetCashierDebt", param);
+
+            if (dt.Rows.Count > 0)
+                return Convert.ToDecimal(dt.Rows[0][0]);
+
+            return 0;
+        }
+      
     }
 }

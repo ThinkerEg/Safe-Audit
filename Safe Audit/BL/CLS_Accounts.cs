@@ -119,10 +119,12 @@ namespace Safe_Audit.BL
             }
             return "0.00";
         }
-        public void AddFinancialTransaction(int accID, string type, string category, string person, decimal amount, DateTime date, string notes)
+        public void AddFinancialTransaction(int accID, string type, string category, string person, decimal amount, DateTime date, string notes, object cashierID)
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
-            SqlParameter[] param = new SqlParameter[7];
+            // زيادة حجم المصفوفة لـ 8
+            SqlParameter[] param = new SqlParameter[8];
+
             param[0] = new SqlParameter("@AccountID", SqlDbType.Int) { Value = accID };
             param[1] = new SqlParameter("@Type", SqlDbType.NVarChar, 20) { Value = type };
             param[2] = new SqlParameter("@Category", SqlDbType.NVarChar, 50) { Value = category };
@@ -130,6 +132,8 @@ namespace Safe_Audit.BL
             param[4] = new SqlParameter("@Amount", SqlDbType.Decimal) { Value = amount };
             param[5] = new SqlParameter("@TransDate", SqlDbType.DateTime) { Value = date };
             param[6] = new SqlParameter("@Notes", SqlDbType.NVarChar) { Value = notes };
+            // البارامتر الجديد
+            param[7] = new SqlParameter("@CashierID", SqlDbType.Int) { Value = cashierID };
 
             DAL.Open();
             DAL.ExecuteCommand("SP_AddFinancialTransaction", param);
