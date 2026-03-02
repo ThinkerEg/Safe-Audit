@@ -29,29 +29,71 @@ namespace Safe_Audit.PL
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
+        //private void cmbCashier_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    // التحقق من أن الكومبو بوكس ظاهر وأن هناك قيمة مختارة فعلياً
+        //    if (cmbCashier.Visible && cmbCashier.SelectedValue != null)
+        //    {
+        //        try
+        //        {
+        //            //MessageBox.Show(cmbCashier.SelectedValue + "");
+        //            // جلب المديونية باستخدام الكلاس المختص
+        //            decimal debt = ALL_CASHIER.GetCashierRemainingDebt(Convert.ToInt32(cmbCashier.SelectedValue));
+        //            // MessageBox.Show(debt + "");
+        //            if (debt > 0)
+        //            {
+        //                lblCashierBalance.Text = "المديونية الحالية: " + debt.ToString("N2") + " ج.م";
+        //                lblCashierBalance.ForeColor = System.Drawing.Color.Red; // تنبيه باللون الأحمر
+        //                numAmount.Value = debt; // وضع المبلغ تلقائياً لتسهيل السداد
+        //            }
+        //            else
+        //            {
+        //                lblCashierBalance.Text = "لا توجد مديونية مستحقة";
+        //                lblCashierBalance.ForeColor = System.Drawing.Color.Green; // أخضر للدلالة على عدم وجود عجز
+        //                numAmount.Value = 0;
+        //            }
 
+        //            lblCashierBalance.Visible = true;
+        //        }
+        //        catch (Exception ex)
+        //        {
+
+        //            MessageBox.Show(ex + "");// في حالة حدوث خطأ أثناء التحميل أو التحويل
+        //            lblCashierBalance.Visible = false;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        lblCashierBalance.Visible = false;
+        //    }
+
+        //}
         // 2. عند اختيار كاشير (عرض الأرقام والجدول)
         private void cmbCashiers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbCashiers.SelectedValue == null || cmbCashiers.SelectedIndex == -1) return;
+            if (cmbCashiers.SelectedValue == null || cmbCashiers.SelectedValue is DataRowView) return;
 
             try
             {
                 int cashierID = Convert.ToInt32(cmbCashiers.SelectedValue);
 
-                // أ- جلب المديونية الصافية (باستخدام الميثود اللي عملناها قبل كدة)
+                // 1. جلب المديونية الصافية (للملصقات/Labels)
                 decimal debt = stl.GetCashierRemainingDebt(cashierID);
                 lblNetDebt.Text = debt.ToString("N2");
                 lblNetDebt.ForeColor = debt > 0 ? Color.Red : Color.Green;
 
-                // ب- جلب تفاصيل العمليات (عجوزات وسدادات)
-                // ملحوظة: يفضل عمل Method في الـ BL تنفذ الـ Union Query الذي ناقشناه
-                dgvTransactions.DataSource = stl.GetCashierRemainingDebt(cashierID);
+                // 2. جلب جدول الحركات (الصح هنا إننا ننادي الدالة اللي بترجع DataTable)
+                // دي الدالة اللي عملناها في كلاس BL وبترجع الـ Union
+                DataTable dt = stl.GetCashierTransactionsReport(cashierID);
+                dgvTransactions.DataSource = dt;
 
                 // تنسيق الجدول
                 FormatGrid();
             }
-            catch { }
+            catch (Exception ex)
+            {
+                MessageBox.Show("خطأ في جلب البيانات: " + ex.Message);
+            }
         }
 
         void FormatGrid()

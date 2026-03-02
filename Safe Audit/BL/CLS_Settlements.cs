@@ -208,6 +208,15 @@ namespace Safe_Audit.BL
 
             return 0;
         }
-      
+        public DataTable GetCashierTransactionsReport(int cashierID)
+        {
+            // بنستخدم الـ DAL اللي متعرف جاهز عندك في أول الكلاس
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@ID", SqlDbType.Int) { Value = cashierID };
+
+            // بننادي البروسيدجر اللي عملناه سوا (SP_GetCashierTransactionsReport)
+            return DAL.SelectData("SP_GetCashierTransactionsReport", param);
+        }
+
     }
 }
