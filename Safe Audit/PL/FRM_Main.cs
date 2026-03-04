@@ -207,5 +207,11 @@ namespace Safe_Audit.PL
         {
             HelperMethods.OpenChildForm(new FRM_DEVICES());
         }
+
+        private void btn_CONFIG_Click(object sender, EventArgs e)
+        {
+            HelperMethods.OpenChildForm(new FRM_CONFIG());
+
+        }
     }
 }

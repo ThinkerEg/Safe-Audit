@@ -53,10 +53,12 @@
     <Compile Include="BL\CLS_CASHIERS.cs" />
     <Compile Include="BL\CLS_DEVICES.cs" />
     <Compile Include="BL\CLS_Expenses.cs" />
+    <Compile Include="BL\CLS_Login.cs" />
     <Compile Include="BL\CLS_Permissions.cs" />
     <Compile Include="BL\CLS_Settlements.cs" />
     <Compile Include="BL\GlobalUser.cs" />
     <Compile Include="BL\HelperMethods.cs" />
+    <Compile Include="BL\ProgramValues.cs" />
     <Compile Include="DAL\DataAccessLayer.cs" />
     <Compile Include="PL\FRM_CashierDebts.cs">
       <SubType>Form</SubType>
@@ -69,6 +71,12 @@
     </Compile>
     <Compile Include="PL\FRM_CASHIERS.Designer.cs">
       <DependentUpon>FRM_CASHIERS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_connect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_connect.Designer.cs">
+      <DependentUpon>FRM_connect.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\FRM_DEVICES.cs">
       <SubType>Form</SubType>
@@ -112,6 +120,12 @@
     <Compile Include="PL\FRM_FinancialMovements.Designer.cs">
       <DependentUpon>FRM_FinancialMovements.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Login.Designer.cs">
+      <DependentUpon>FRM_Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +144,12 @@
     <Compile Include="PL\FRM_Transfers.Designer.cs">
       <DependentUpon>FRM_Transfers.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Users.Designer.cs">
+      <DependentUpon>FRM_Users.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="PL\FRM_AccountStatement.resx">
@@ -147,6 +167,9 @@
     <EmbeddedResource Include="PL\FRM_CASHIERS.resx">
       <DependentUpon>FRM_CASHIERS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_connect.resx">
+      <DependentUpon>FRM_connect.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_DEVICES.resx">
       <DependentUpon>FRM_DEVICES.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +182,9 @@
     <EmbeddedResource Include="PL\FRM_FinancialMovements.resx">
       <DependentUpon>FRM_FinancialMovements.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Login.resx">
+      <DependentUpon>FRM_Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Main.resx">
       <DependentUpon>FRM_Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Transfers.resx">
       <DependentUpon>FRM_Transfers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Users.resx">
+      <DependentUpon>FRM_Users.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -199,6 +228,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\إجمالي الفيزا.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BigShawarmaLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\connect to database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer_settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\سلة المهملات.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BigShawarma.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -63,6 +63,66 @@ namespace Safe_Audit.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BigShawarma {
+            get {
+                object obj = ResourceManager.GetObject("BigShawarma", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BigShawarmaLogo {
+            get {
+                object obj = ResourceManager.GetObject("BigShawarmaLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap connect_to_database {
+            get {
+                object obj = ResourceManager.GetObject("connect to database", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap printer {
+            get {
+                object obj = ResourceManager.GetObject("printer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap printer_settings {
+            get {
+                object obj = ResourceManager.GetObject("printer_settings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap User {
+            get {
+                object obj = ResourceManager.GetObject("User", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap إجمالي_الفيزا {
             get {
                 object obj = ResourceManager.GetObject("إجمالي الفيزا", resourceCulture);
@@ -86,6 +146,16 @@ namespace Safe_Audit.Properties {
         internal static System.Drawing.Bitmap إجمالي_المصروفات_اليوم {
             get {
                 object obj = ResourceManager.GetObject("إجمالي المصروفات اليوم", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap سلة_المهملات {
+            get {
+                object obj = ResourceManager.GetObject("سلة المهملات", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -19,6 +19,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlSidebar = new System.Windows.Forms.Panel();
+            this.btn_DEVICES = new System.Windows.Forms.Button();
             this.btn_CASHIERS = new System.Windows.Forms.Button();
             this.btn_CashierDebts = new System.Windows.Forms.Button();
             this.btn_FinancialMovements = new System.Windows.Forms.Button();
@@ -37,35 +38,36 @@
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutCards = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlCash = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblCashVal = new System.Windows.Forms.Label();
             this.lblCashTitle = new System.Windows.Forms.Label();
             this.pnlDigital = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblDigitalVal = new System.Windows.Forms.Label();
             this.lblDigitalTitle = new System.Windows.Forms.Label();
             this.pnlExpenses = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblExpVal = new System.Windows.Forms.Label();
             this.lblExpTitle = new System.Windows.Forms.Label();
             this.dgvBalances = new System.Windows.Forms.DataGridView();
-            this.btn_DEVICES = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btn_CONFIG = new System.Windows.Forms.Button();
             this.pnlSidebar.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.pnlTop.SuspendLayout();
             this.flowLayoutCards.SuspendLayout();
             this.pnlCash.SuspendLayout();
-            this.pnlDigital.SuspendLayout();
-            this.pnlExpenses.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBalances)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlDigital.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pnlExpenses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBalances)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSidebar
             // 
             this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.pnlSidebar.Controls.Add(this.btn_CONFIG);
             this.pnlSidebar.Controls.Add(this.btn_DEVICES);
             this.pnlSidebar.Controls.Add(this.btn_CASHIERS);
             this.pnlSidebar.Controls.Add(this.btn_CashierDebts);
@@ -83,6 +85,19 @@
             this.pnlSidebar.Name = "pnlSidebar";
             this.pnlSidebar.Size = new System.Drawing.Size(200, 728);
             this.pnlSidebar.TabIndex = 1;
+            // 
+            // btn_DEVICES
+            // 
+            this.btn_DEVICES.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_DEVICES.FlatAppearance.BorderSize = 0;
+            this.btn_DEVICES.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DEVICES.ForeColor = System.Drawing.Color.White;
+            this.btn_DEVICES.Location = new System.Drawing.Point(0, 400);
+            this.btn_DEVICES.Name = "btn_DEVICES";
+            this.btn_DEVICES.Size = new System.Drawing.Size(200, 40);
+            this.btn_DEVICES.TabIndex = 11;
+            this.btn_DEVICES.Text = "إدارة بيانات الأجهزة";
+            this.btn_DEVICES.Click += new System.EventHandler(this.btn_DEVICES_Click);
             // 
             // btn_CASHIERS
             // 
@@ -307,6 +322,16 @@
             this.pnlCash.Size = new System.Drawing.Size(300, 120);
             this.pnlCash.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Safe_Audit.Properties.Resources.إجمالي_الكاش;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // lblCashVal
             // 
             this.lblCashVal.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
@@ -324,7 +349,7 @@
             this.lblCashTitle.ForeColor = System.Drawing.Color.White;
             this.lblCashTitle.Location = new System.Drawing.Point(200, 15);
             this.lblCashTitle.Name = "lblCashTitle";
-            this.lblCashTitle.Size = new System.Drawing.Size(69, 13);
+            this.lblCashTitle.Size = new System.Drawing.Size(72, 13);
             this.lblCashTitle.TabIndex = 1;
             this.lblCashTitle.Text = "إجمالي الكاش";
             // 
@@ -338,6 +363,16 @@
             this.pnlDigital.Name = "pnlDigital";
             this.pnlDigital.Size = new System.Drawing.Size(300, 120);
             this.pnlDigital.TabIndex = 1;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Safe_Audit.Properties.Resources.إجمالي_الفيزا;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
             // 
             // lblDigitalVal
             // 
@@ -356,7 +391,7 @@
             this.lblDigitalTitle.ForeColor = System.Drawing.Color.White;
             this.lblDigitalTitle.Location = new System.Drawing.Point(180, 15);
             this.lblDigitalTitle.Name = "lblDigitalTitle";
-            this.lblDigitalTitle.Size = new System.Drawing.Size(103, 13);
+            this.lblDigitalTitle.Size = new System.Drawing.Size(106, 13);
             this.lblDigitalTitle.TabIndex = 1;
             this.lblDigitalTitle.Text = "إجمالي الفيزا/الرقمي";
             // 
@@ -370,6 +405,16 @@
             this.pnlExpenses.Name = "pnlExpenses";
             this.pnlExpenses.Size = new System.Drawing.Size(300, 120);
             this.pnlExpenses.TabIndex = 2;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Safe_Audit.Properties.Resources.إجمالي_المصروفات_اليوم;
+            this.pictureBox3.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
             // 
             // lblExpVal
             // 
@@ -388,7 +433,7 @@
             this.lblExpTitle.ForeColor = System.Drawing.Color.White;
             this.lblExpTitle.Location = new System.Drawing.Point(149, 15);
             this.lblExpTitle.Name = "lblExpTitle";
-            this.lblExpTitle.Size = new System.Drawing.Size(116, 13);
+            this.lblExpTitle.Size = new System.Drawing.Size(118, 13);
             this.lblExpTitle.TabIndex = 1;
             this.lblExpTitle.Text = "إجمالي المصروفات اليوم";
             // 
@@ -417,48 +462,18 @@
             this.dgvBalances.Size = new System.Drawing.Size(957, 448);
             this.dgvBalances.TabIndex = 5;
             // 
-            // btn_DEVICES
+            // btn_CONFIG
             // 
-            this.btn_DEVICES.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_DEVICES.FlatAppearance.BorderSize = 0;
-            this.btn_DEVICES.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_DEVICES.ForeColor = System.Drawing.Color.White;
-            this.btn_DEVICES.Location = new System.Drawing.Point(0, 400);
-            this.btn_DEVICES.Name = "btn_DEVICES";
-            this.btn_DEVICES.Size = new System.Drawing.Size(200, 40);
-            this.btn_DEVICES.TabIndex = 11;
-            this.btn_DEVICES.Text = "إدارة بيانات الأجهزة";
-            this.btn_DEVICES.Click += new System.EventHandler(this.btn_DEVICES_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Safe_Audit.Properties.Resources.إجمالي_الكاش;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Safe_Audit.Properties.Resources.إجمالي_الفيزا;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Safe_Audit.Properties.Resources.إجمالي_المصروفات_اليوم;
-            this.pictureBox3.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
+            this.btn_CONFIG.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_CONFIG.FlatAppearance.BorderSize = 0;
+            this.btn_CONFIG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_CONFIG.ForeColor = System.Drawing.Color.White;
+            this.btn_CONFIG.Location = new System.Drawing.Point(0, 440);
+            this.btn_CONFIG.Name = "btn_CONFIG";
+            this.btn_CONFIG.Size = new System.Drawing.Size(200, 40);
+            this.btn_CONFIG.TabIndex = 12;
+            this.btn_CONFIG.Text = "إعدادات الاتصال بالسيرفر";
+            this.btn_CONFIG.Click += new System.EventHandler(this.btn_CONFIG_Click);
             // 
             // FRM_Main
             // 
@@ -482,14 +497,14 @@
             this.flowLayoutCards.ResumeLayout(false);
             this.pnlCash.ResumeLayout(false);
             this.pnlCash.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlDigital.ResumeLayout(false);
             this.pnlDigital.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlExpenses.ResumeLayout(false);
             this.pnlExpenses.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBalances)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBalances)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -528,5 +543,6 @@
         private System.Windows.Forms.Button btn_CashierDebts;
         private System.Windows.Forms.Button btn_CASHIERS;
         private System.Windows.Forms.Button btn_DEVICES;
+        private System.Windows.Forms.Button btn_CONFIG;
     }
 }
