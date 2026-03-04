@@ -58,7 +58,7 @@ namespace Safe_Audit.PL
         private void FRM_Users_Load(object sender, EventArgs e)
         {
             comboUserType.Items.Clear();
-            comboUserType.Items.AddRange(new string[] { "Admin", "User" }); // عدلها حسب احتياج Safe_Audit
+            comboUserType.Items.AddRange(new string[] { "مدير نظام", "مدخل بيانات" }); // عدلها حسب احتياج Safe_Audit
             RefreshGrid();
         }
 

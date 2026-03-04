@@ -1,14 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Safe_Audit.BL
 {
     public static class GlobalUser
     {
-        public static int ID { get; set; } = 1; // مبدئياً خليه 1 لحد ما نعمل شاشة Login
-        public static string Name { get; set; }
+        // المعرف الوحيد للمستخدم (المستخدم في الـ Foreign Keys والـ Log)
+        public static int ID { get; set; } = 1;
+
+        // الاسم الكامل للعرض في واجهة البرنامج
+        public static string FullName { get; set; } = "مدير النظام";
+
+        // نوع المستخدم (أدمن، كاشير، إلخ) للتحكم في الصلاحيات
+        public static string UserType { get; set; }
     }
 }

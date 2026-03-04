@@ -128,11 +128,30 @@ namespace Safe_Audit.PL
 
         private void FRM_Main_Load(object sender, EventArgs e)
         {
-            // السماح بتحريك النموذج من خلال الهيدر
+            // 1. السماح بتحريك النموذج من خلال الهيدر
             pnlHeader.MouseDown += (s, ev) => { HelperMethods.MoveForm(this.Handle); };
 
-            // استدعاء دالة تحميل البيانات فور التشغيل
+            // 2. استدعاء دالة تحميل البيانات فور التشغيل (الداشبورد)
             RefreshDashboard();
+
+            // 3. عرض اسم المستخدم من الكلاس العالمي الجديد
+            lblCurrentUser.Text = "المستخدم الحالي: " + GlobalUser.FullName;
+
+            // 4. عرض التاريخ الحالي للنظام
+            lblServerDate.Text = " | تاريخ اليوم: " + DateTime.Now.ToShortDateString();
+
+            // 5. التعديل الجوهري: استبدال ProgramValues بـ GlobalUser
+            lblUserType.Text = "الصلاحية: " + GlobalUser.UserType; // تم التعديل هنا ✅
+            if (GlobalUser.UserType == "مدير نظام")
+            {
+                lblUserType.ForeColor = Color.Gold;
+            }
+            else
+            {
+                lblUserType.ForeColor = Color.White;
+            }
+            timer1.Start(); // التأكد من بدء التايمر
+            timer1_Tick(null, null); // استدعاء يدوي لأول مرة عشان يظهر الوقت فوراً
         }
         private void btnRefresh_Click(object sender, EventArgs e)
         {
@@ -212,6 +231,17 @@ namespace Safe_Audit.PL
         {
             HelperMethods.OpenChildForm(new FRM_CONFIG());
 
+        }
+
+        private void btn_Users_Click(object sender, EventArgs e)
+        {
+            HelperMethods.OpenChildForm(new FRM_Users());
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            // عرض التاريخ والوقت معاً بشكل منسق
+            lblServerDate.Text = " | " + DateTime.Now.ToString("yyyy/MM/dd  hh:mm:ss tt");
         }
     }
 }

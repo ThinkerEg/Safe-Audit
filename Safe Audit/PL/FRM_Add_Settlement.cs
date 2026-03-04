@@ -150,29 +150,49 @@ namespace Safe_Audit.PL
                     }
 
                     // --- التعديل الجوهري هنا (القرار الذكي) ---
+                    //if (IsEditMode)// حالة التعديل والرقابة
+                    //{
+                    //    settlement.UpdateFullSettlement(
+                    //        numShiftID.Value,
+                    //        Convert.ToInt32(cmbCashier.SelectedValue),
+                    //        Convert.ToInt32(cmbDevices.SelectedValue),
+                    //        GlobalUser.ID, // <--- هنا استخدمنا الكلاس العام الجديد
+                    //        date_P.Value,
+                    //        cmbShift.Text,
+                    //        numSystemAmount.Value,
+                    //        Convert.ToDecimal(lblTotal.Text),
+                    //        Convert.ToDecimal(lblDigitalTotal.Text),
+                    //        Convert.ToDecimal(lblExpensesTotal.Text),
+                    //        Convert.ToDecimal(lblFinalDiff.Text),
+                    //        lblStatus.Text,
+                    //        (int)txt200.Value, (int)txt100.Value, (int)txt50.Value, (int)txt20.Value,
+                    //        (int)txt10.Value, (int)txt5.Value, (int)txt1.Value,
+                    //        dtPayments,
+                    //        dtExpenses
+                    //    );
 
-                    if (IsEditMode) // حالة التعديل والرقابة
-                    {
-                        settlement.UpdateFullSettlement(
-                            numShiftID.Value,
-                            Convert.ToInt32(cmbCashier.SelectedValue),
-                            Convert.ToInt32(cmbDevices.SelectedValue),
-                            1, // UserID
-                            date_P.Value,
-                            cmbShift.Text,
-                            numSystemAmount.Value,
-                            Convert.ToDecimal(lblTotal.Text),
-                            Convert.ToDecimal(lblDigitalTotal.Text),
-                            Convert.ToDecimal(lblExpensesTotal.Text),
-                            Convert.ToDecimal(lblFinalDiff.Text),
-                            lblStatus.Text,
-                            (int)txt200.Value, (int)txt100.Value, (int)txt50.Value, (int)txt20.Value,
-                            (int)txt10.Value, (int)txt5.Value, (int)txt1.Value,
-                            dtPayments,
-                            dtExpenses
-                        );
+                        if (IsEditMode) // حالة التعديل والرقابة
+                        {
+                            settlement.UpdateFullSettlement(
+                                numShiftID.Value,
+                                Convert.ToInt32(cmbCashier.SelectedValue),
+                                Convert.ToInt32(cmbDevices.SelectedValue),
+                        GlobalUser.ID, // <--- هنا استخدمنا الكلاس العام الجديد
+                                date_P.Value,
+                                cmbShift.Text,
+                                numSystemAmount.Value,
+                                Convert.ToDecimal(lblTotal.Text),
+                                Convert.ToDecimal(lblDigitalTotal.Text),
+                                Convert.ToDecimal(lblExpensesTotal.Text),
+                                Convert.ToDecimal(lblFinalDiff.Text),
+                                lblStatus.Text,
+                                (int)txt200.Value, (int)txt100.Value, (int)txt50.Value, (int)txt20.Value,
+                                (int)txt10.Value, (int)txt5.Value, (int)txt1.Value,
+                                dtPayments,
+                                dtExpenses
+                            );
 
-                        MessageBox.Show("تم تعديل الوردية بنجاح وتسجيل الخلاصة المخطئة في سجل الرقابة.", "تم التعديل", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("تم تعديل الوردية بنجاح وتسجيل الخلاصة المخطئة في سجل الرقابة.", "تم التعديل", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else // حالة الإضافة الجديدة (كودك الأصلي)
                     {

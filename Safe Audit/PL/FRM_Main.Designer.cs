@@ -17,8 +17,11 @@
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlSidebar = new System.Windows.Forms.Panel();
+            this.btn_Users = new System.Windows.Forms.Button();
+            this.btn_CONFIG = new System.Windows.Forms.Button();
             this.btn_DEVICES = new System.Windows.Forms.Button();
             this.btn_CASHIERS = new System.Windows.Forms.Button();
             this.btn_CashierDebts = new System.Windows.Forms.Button();
@@ -50,7 +53,11 @@
             this.lblExpVal = new System.Windows.Forms.Label();
             this.lblExpTitle = new System.Windows.Forms.Label();
             this.dgvBalances = new System.Windows.Forms.DataGridView();
-            this.btn_CONFIG = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblCurrentUser = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblUserType = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblServerDate = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlSidebar.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.pnlTop.SuspendLayout();
@@ -62,11 +69,13 @@
             this.pnlExpenses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBalances)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlSidebar
             // 
             this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.pnlSidebar.Controls.Add(this.btn_Users);
             this.pnlSidebar.Controls.Add(this.btn_CONFIG);
             this.pnlSidebar.Controls.Add(this.btn_DEVICES);
             this.pnlSidebar.Controls.Add(this.btn_CASHIERS);
@@ -85,6 +94,32 @@
             this.pnlSidebar.Name = "pnlSidebar";
             this.pnlSidebar.Size = new System.Drawing.Size(200, 728);
             this.pnlSidebar.TabIndex = 1;
+            // 
+            // btn_Users
+            // 
+            this.btn_Users.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Users.FlatAppearance.BorderSize = 0;
+            this.btn_Users.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Users.ForeColor = System.Drawing.Color.White;
+            this.btn_Users.Location = new System.Drawing.Point(0, 480);
+            this.btn_Users.Name = "btn_Users";
+            this.btn_Users.Size = new System.Drawing.Size(200, 40);
+            this.btn_Users.TabIndex = 13;
+            this.btn_Users.Text = "إعدادات الاتصال بالسيرفر";
+            this.btn_Users.Click += new System.EventHandler(this.btn_Users_Click);
+            // 
+            // btn_CONFIG
+            // 
+            this.btn_CONFIG.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_CONFIG.FlatAppearance.BorderSize = 0;
+            this.btn_CONFIG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_CONFIG.ForeColor = System.Drawing.Color.White;
+            this.btn_CONFIG.Location = new System.Drawing.Point(0, 440);
+            this.btn_CONFIG.Name = "btn_CONFIG";
+            this.btn_CONFIG.Size = new System.Drawing.Size(200, 40);
+            this.btn_CONFIG.TabIndex = 12;
+            this.btn_CONFIG.Text = "إعدادات الاتصال بالسيرفر";
+            this.btn_CONFIG.Click += new System.EventHandler(this.btn_CONFIG_Click);
             // 
             // btn_DEVICES
             // 
@@ -349,7 +384,7 @@
             this.lblCashTitle.ForeColor = System.Drawing.Color.White;
             this.lblCashTitle.Location = new System.Drawing.Point(200, 15);
             this.lblCashTitle.Name = "lblCashTitle";
-            this.lblCashTitle.Size = new System.Drawing.Size(72, 13);
+            this.lblCashTitle.Size = new System.Drawing.Size(69, 13);
             this.lblCashTitle.TabIndex = 1;
             this.lblCashTitle.Text = "إجمالي الكاش";
             // 
@@ -391,7 +426,7 @@
             this.lblDigitalTitle.ForeColor = System.Drawing.Color.White;
             this.lblDigitalTitle.Location = new System.Drawing.Point(180, 15);
             this.lblDigitalTitle.Name = "lblDigitalTitle";
-            this.lblDigitalTitle.Size = new System.Drawing.Size(106, 13);
+            this.lblDigitalTitle.Size = new System.Drawing.Size(103, 13);
             this.lblDigitalTitle.TabIndex = 1;
             this.lblDigitalTitle.Text = "إجمالي الفيزا/الرقمي";
             // 
@@ -433,7 +468,7 @@
             this.lblExpTitle.ForeColor = System.Drawing.Color.White;
             this.lblExpTitle.Location = new System.Drawing.Point(149, 15);
             this.lblExpTitle.Name = "lblExpTitle";
-            this.lblExpTitle.Size = new System.Drawing.Size(118, 13);
+            this.lblExpTitle.Size = new System.Drawing.Size(116, 13);
             this.lblExpTitle.TabIndex = 1;
             this.lblExpTitle.Text = "إجمالي المصروفات اليوم";
             // 
@@ -444,14 +479,14 @@
             this.dgvBalances.BackgroundColor = System.Drawing.Color.White;
             this.dgvBalances.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvBalances.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBalances.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBalances.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvBalances.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBalances.Location = new System.Drawing.Point(0, 280);
             this.dgvBalances.Name = "dgvBalances";
@@ -459,21 +494,47 @@
             this.dgvBalances.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgvBalances.RowHeadersVisible = false;
             this.dgvBalances.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBalances.Size = new System.Drawing.Size(957, 448);
+            this.dgvBalances.Size = new System.Drawing.Size(957, 416);
             this.dgvBalances.TabIndex = 5;
             // 
-            // btn_CONFIG
+            // statusStrip1
             // 
-            this.btn_CONFIG.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_CONFIG.FlatAppearance.BorderSize = 0;
-            this.btn_CONFIG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_CONFIG.ForeColor = System.Drawing.Color.White;
-            this.btn_CONFIG.Location = new System.Drawing.Point(0, 440);
-            this.btn_CONFIG.Name = "btn_CONFIG";
-            this.btn_CONFIG.Size = new System.Drawing.Size(200, 40);
-            this.btn_CONFIG.TabIndex = 12;
-            this.btn_CONFIG.Text = "إعدادات الاتصال بالسيرفر";
-            this.btn_CONFIG.Click += new System.EventHandler(this.btn_CONFIG_Click);
+            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.statusStrip1.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblCurrentUser,
+            this.lblUserType,
+            this.lblServerDate});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 696);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.statusStrip1.Size = new System.Drawing.Size(957, 32);
+            this.statusStrip1.TabIndex = 6;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lblCurrentUser
+            // 
+            this.lblCurrentUser.Name = "lblCurrentUser";
+            this.lblCurrentUser.Size = new System.Drawing.Size(165, 27);
+            this.lblCurrentUser.Text = "lblCurrentUser";
+            // 
+            // lblUserType
+            // 
+            this.lblUserType.Name = "lblUserType";
+            this.lblUserType.Size = new System.Drawing.Size(138, 27);
+            this.lblUserType.Text = "lblUserType";
+            // 
+            // lblServerDate
+            // 
+            this.lblServerDate.Name = "lblServerDate";
+            this.lblServerDate.Size = new System.Drawing.Size(240, 27);
+            this.lblServerDate.Text = "toolStripStatusLabel3";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FRM_Main
             // 
@@ -481,6 +542,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1157, 728);
             this.Controls.Add(this.dgvBalances);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.flowLayoutCards);
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.pnlHeader);
@@ -505,7 +567,10 @@
             this.pnlExpenses.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBalances)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -544,5 +609,11 @@
         private System.Windows.Forms.Button btn_CASHIERS;
         private System.Windows.Forms.Button btn_DEVICES;
         private System.Windows.Forms.Button btn_CONFIG;
+        private System.Windows.Forms.Button btn_Users;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lblCurrentUser;
+        private System.Windows.Forms.ToolStripStatusLabel lblUserType;
+        private System.Windows.Forms.ToolStripStatusLabel lblServerDate;
+        private System.Windows.Forms.Timer timer1;
     }
 }

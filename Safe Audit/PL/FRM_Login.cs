@@ -80,8 +80,20 @@ namespace Safe_Audit.PL
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (comboBoxUsers.SelectedValue == null || string.IsNullOrEmpty(txtPassword.Text)) return;
+            // 1. التحقق الأولي: هل الكومبو بوكس فيه داتا أصلاً؟
+            if (comboBoxUsers.Items.Count == 0)
+            {
+                MessageBox.Show("لا يوجد مستخدمين مسجلين في النظام، يرجى مراجعة قاعدة البيانات.", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            // 2. التحقق من الاختيار والباسورد
+            if (comboBoxUsers.SelectedValue == null ||
+                string.IsNullOrEmpty(txtPassword.Text) ||
+                txtPassword.Text == "كلمة المرور") // إضافة هذا الشرط الصغير
+            {
+                return;
+            }
             try
             {
                 BL.CLS_Login log = new BL.CLS_Login();
@@ -90,8 +102,9 @@ namespace Safe_Audit.PL
 
                 if (dt.Rows.Count > 0)
                 {
-                    ProgramValues.FullName = dt.Rows[0]["FullName"].ToString();
-                    ProgramValues.UserType = dt.Rows[0]["UserType"].ToString();
+                    GlobalUser.ID = Convert.ToInt32(dt.Rows[0]["UserID"]);
+                    GlobalUser.FullName = dt.Rows[0]["FullName"].ToString();
+                    GlobalUser.UserType = dt.Rows[0]["UserType"].ToString();
                     this.DialogResult = DialogResult.OK;
                 }
                 else

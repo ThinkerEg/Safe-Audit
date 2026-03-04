@@ -58,7 +58,6 @@
     <Compile Include="BL\CLS_Settlements.cs" />
     <Compile Include="BL\GlobalUser.cs" />
     <Compile Include="BL\HelperMethods.cs" />
-    <Compile Include="BL\ProgramValues.cs" />
     <Compile Include="DAL\DataAccessLayer.cs" />
     <Compile Include="PL\FRM_CashierDebts.cs">
       <SubType>Form</SubType>

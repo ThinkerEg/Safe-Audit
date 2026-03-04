@@ -9,7 +9,7 @@ namespace Safe_Audit.BL
     public static class HelperMethods
     {
         #region الألوان الأساسية
-        public static Color HeaderColor = Color.FromArgb(41, 128, 185);
+        public static Color HeaderColor = Color.FromArgb(41, 128, 185);//45, 52, 71
         public static Color PrimaryColor = Color.FromArgb(41, 128, 185);
         public static Color SuccessColor = Color.FromArgb(39, 174, 96);
         public static Color DangerColor = Color.FromArgb(192, 57, 43);
