@@ -482,61 +482,100 @@ namespace Safe_Audit.PL
             CalculateTotals();
 
         }
+        //private void FRM_Add_Settlement_Load(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        // 1. تحميل البيانات الأساسية أولاً (الأجهزة والكاشير)
+        //        cmbDevices.DataSource = dev.GET_ALL_DEVICES();
+        //        cmbDevices.DisplayMember = "DeviceName";
+        //        cmbDevices.ValueMember = "DeviceID";
+
+        //        if (cmbShift.Items.Count > 0) cmbShift.SelectedIndex = 0;
+
+        //        // 2. المنطق المطلوب:
+        //        if (IncomingShiftID > 0)
+        //        {
+        //            // حالة التعديل: نحمل بيانات الوردية الواردة
+        //            PerformSearch(IncomingShiftID);
+        //        }
+        //        else
+        //        {
+        //            // حالة إضافة جديدة: نصفر الفورم ونجهز رقم وردية جديد
+        //            ClearForm();
+        //            date_P.Value = DateTime.Now;
+        //            IsEditMode = false;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("حدث خطأ أثناء تحميل البيانات: " + ex.Message);
+        //    }
+        //}
         private void FRM_Add_Settlement_Load(object sender, EventArgs e)
         {
             try
             {
-                // 1. تحميل البيانات الأساسية أولاً (الأجهزة والكاشير)
+                // 1. تحميل البيانات الأساسية
                 cmbDevices.DataSource = dev.GET_ALL_DEVICES();
                 cmbDevices.DisplayMember = "DeviceName";
                 cmbDevices.ValueMember = "DeviceID";
 
                 if (cmbShift.Items.Count > 0) cmbShift.SelectedIndex = 0;
 
-                // 2. المنطق المطلوب:
+                // 2. المنطق (تعديل أم إضافة)
                 if (IncomingShiftID > 0)
                 {
-                    // حالة التعديل: نحمل بيانات الوردية الواردة
                     PerformSearch(IncomingShiftID);
                 }
                 else
                 {
-                    // حالة إضافة جديدة: نصفر الفورم ونجهز رقم وردية جديد
                     ClearForm();
                     date_P.Value = DateTime.Now;
                     IsEditMode = false;
                 }
+
+                // 3. ربط أحداث الـ NumericUpDown (نمرر this للبحث في كل الفورم)
+                BindNumericEvents(this);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("حدث خطأ أثناء تحميل البيانات: " + ex.Message);
             }
         }
-        //private void FRM_Add_Settlement_Load(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        // 1. تعبئة البيانات الأساسية (الأجهزة)
-        //        cmbDevices.DataSource = settlement.GET_ALL_DEVICES();
-        //        cmbDevices.DisplayMember = "DeviceName";
-        //        cmbDevices.ValueMember = "DeviceID";
 
-        //        // 2. ضبط القائمة المنسدلة للوردية (صباحي/مسائي)
-        //        if (cmbShift.Items.Count > 0) cmbShift.SelectedIndex = 0;
+        private void BindNumericEvents(Control parent)
+        {
+            foreach (Control c in parent.Controls)
+            {
+                NumericUpDown num = c as NumericUpDown;
+                if (num != null)
+                {
+                    // فك الارتباط أولاً ثم الربط لمنع تكرار تنفيذ الكود (Best Practice)
+                    num.Enter -= new EventHandler(Numeric_Enter);
+                    num.Click -= new EventHandler(Numeric_Enter);
 
-        //        // 3. استدعاء ClearForm (الجوكر بتاعنا)
-        //        // دي هتعمل 3 حاجات: هتجيب آخر ID + 1، وتصفر الجداول، وتصفر المبالغ
-        //        ClearForm();
+                    num.Enter += new EventHandler(Numeric_Enter);
+                    num.Click += new EventHandler(Numeric_Enter);
+                }
 
-        //        // 4. ضبط التاريخ على تاريخ اليوم لحظة فتح الشاشة
-        //        date_P.Value = DateTime.Now;
-        //        PerformSearch(IncomingShiftID);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("حدث خطأ أثناء تحميل البيانات: " + ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
+                // البحث داخل الحاويات (مثل الـ GroupBox اللي شايل الفئات)
+                if (c.HasChildren)
+                {
+                    BindNumericEvents(c);
+                }
+            }
+        }
+
+        private void Numeric_Enter(object sender, EventArgs e)
+        {
+            NumericUpDown num = sender as NumericUpDown;
+            if (num != null)
+            {
+                // استخدام num.Text.Length مع Select هو الحل الأدق في الإصدارات القديمة
+                num.Select(0, num.Text.Length);
+            }
+        }
 
         private void lblTotal_TextChanged(object sender, EventArgs e)
         {

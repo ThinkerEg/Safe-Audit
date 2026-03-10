@@ -31,7 +31,6 @@
             this.pnlColors = new System.Windows.Forms.Panel();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnPickHeader = new System.Windows.Forms.Button();
-            this.btnPickPrimary = new System.Windows.Forms.Button();
             this.btnPickBack = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.grpPreview = new System.Windows.Forms.GroupBox();
@@ -43,9 +42,9 @@
             this.col2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSample = new System.Windows.Forms.Button();
             this.pnlHeaderPreview = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
             this.lblHeaderTitle = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.btnClose = new System.Windows.Forms.Button();
             this.pnlColors.SuspendLayout();
             this.grpPreview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSample)).BeginInit();
@@ -56,7 +55,6 @@
             // 
             this.pnlColors.Controls.Add(this.btnReset);
             this.pnlColors.Controls.Add(this.btnPickHeader);
-            this.pnlColors.Controls.Add(this.btnPickPrimary);
             this.pnlColors.Controls.Add(this.btnPickBack);
             this.pnlColors.Controls.Add(this.btnSave);
             this.pnlColors.Dock = System.Windows.Forms.DockStyle.Right;
@@ -69,7 +67,7 @@
             // btnReset
             // 
             this.btnReset.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReset.Location = new System.Drawing.Point(10, 145);
+            this.btnReset.Location = new System.Drawing.Point(10, 100);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(200, 45);
             this.btnReset.TabIndex = 4;
@@ -79,22 +77,12 @@
             // btnPickHeader
             // 
             this.btnPickHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPickHeader.Location = new System.Drawing.Point(10, 100);
+            this.btnPickHeader.Location = new System.Drawing.Point(10, 55);
             this.btnPickHeader.Name = "btnPickHeader";
             this.btnPickHeader.Size = new System.Drawing.Size(200, 45);
             this.btnPickHeader.TabIndex = 0;
             this.btnPickHeader.Text = "لون الهيدر والشرائط";
             this.btnPickHeader.Click += new System.EventHandler(this.btnPickHeader_Click);
-            // 
-            // btnPickPrimary
-            // 
-            this.btnPickPrimary.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPickPrimary.Location = new System.Drawing.Point(10, 55);
-            this.btnPickPrimary.Name = "btnPickPrimary";
-            this.btnPickPrimary.Size = new System.Drawing.Size(200, 45);
-            this.btnPickPrimary.TabIndex = 1;
-            this.btnPickPrimary.Text = "لون الأزرار الرئيسية";
-            this.btnPickPrimary.Click += new System.EventHandler(this.btnPickPrimary_Click);
             // 
             // btnPickBack
             // 
@@ -138,27 +126,36 @@
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.button3.Location = new System.Drawing.Point(21, 349);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(347, 35);
             this.button3.TabIndex = 5;
-            this.button3.Text = "الأزرار التنبيهات";
+            this.button3.Text = "حفظ/دخول";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(140)))), ((int)(((byte)(141)))));
             this.button2.Location = new System.Drawing.Point(21, 308);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(347, 35);
             this.button2.TabIndex = 4;
-            this.button2.Text = "الأزرار التحذيرات";
+            this.button2.Text = "جديد /مسح/مسار/تجميد";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
             this.button1.Location = new System.Drawing.Point(21, 267);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(347, 35);
             this.button1.TabIndex = 3;
-            this.button1.Text = "الأزرار العمليات الناجحة";
+            this.button1.Text = "تعديل/إختبار";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dgvSample
             // 
@@ -188,11 +185,14 @@
             // 
             // btnSample
             // 
+            this.btnSample.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.btnSample.Location = new System.Drawing.Point(21, 226);
             this.btnSample.Name = "btnSample";
             this.btnSample.Size = new System.Drawing.Size(347, 35);
             this.btnSample.TabIndex = 1;
-            this.btnSample.Text = "الأزرار الرئيسية";
+            this.btnSample.Text = "إضافة/تحديث/بحث";
+            this.btnSample.UseVisualStyleBackColor = false;
+            this.btnSample.Click += new System.EventHandler(this.btnSample_Click);
             // 
             // pnlHeaderPreview
             // 
@@ -203,6 +203,20 @@
             this.pnlHeaderPreview.Name = "pnlHeaderPreview";
             this.pnlHeaderPreview.Size = new System.Drawing.Size(374, 40);
             this.pnlHeaderPreview.TabIndex = 2;
+            // 
+            // btnClose
+            // 
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(3, -5);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(42, 42);
+            this.btnClose.TabIndex = 12;
+            this.btnClose.Text = "X";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblHeaderTitle
             // 
@@ -218,20 +232,6 @@
             // colorDialog1
             // 
             this.colorDialog1.ShowHelp = true;
-            // 
-            // btnClose
-            // 
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(3, -5);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(42, 42);
-            this.btnClose.TabIndex = 12;
-            this.btnClose.Text = "X";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // FRM_ColorSettings
             // 
@@ -256,7 +256,6 @@
         // تعريف الأدوات (Controls)
         private System.Windows.Forms.Panel pnlColors;
         private System.Windows.Forms.Button btnPickHeader;
-        private System.Windows.Forms.Button btnPickPrimary;
         private System.Windows.Forms.Button btnPickBack;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.GroupBox grpPreview;

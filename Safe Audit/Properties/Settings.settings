@@ -38,5 +38,14 @@
     <Setting Name="BackColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">244, 247, 249</Value>
     </Setting>
+    <Setting Name="EditColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">255, 152, 0</Value>
+    </Setting>
+    <Setting Name="AddColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">39, 174, 96</Value>
+    </Setting>
+    <Setting Name="OtherColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">158, 158, 158</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

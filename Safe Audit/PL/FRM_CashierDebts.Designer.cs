@@ -149,6 +149,7 @@
             this.dgvTransactions.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgvTransactions.Size = new System.Drawing.Size(760, 280);
             this.dgvTransactions.TabIndex = 1;
+            this.dgvTransactions.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvTransactions_DataBindingComplete);
             // 
             // btnPayShortcut
             // 

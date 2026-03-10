@@ -187,7 +187,7 @@
             this.btnTransfer.Name = "btnTransfer";
             this.btnTransfer.Size = new System.Drawing.Size(320, 40);
             this.btnTransfer.TabIndex = 0;
-            this.btnTransfer.Text = "تفيذ عملية التحويل";
+            this.btnTransfer.Text = "حفظ وتفيذ عملية التحويل";
             this.btnTransfer.UseVisualStyleBackColor = false;
             this.btnTransfer.Click += new System.EventHandler(this.btnTransfer_Click);
             // 

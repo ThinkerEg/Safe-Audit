@@ -28,9 +28,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvStatement = new System.Windows.Forms.DataGridView();
             this.pnlFooter = new System.Windows.Forms.Panel();
-            this.lblFinalBalance = new System.Windows.Forms.Label();
-            this.lblTotalOut = new System.Windows.Forms.Label();
             this.lblTotalIn = new System.Windows.Forms.Label();
+            this.lblTotalOut = new System.Windows.Forms.Label();
+            this.lblFinalBalance = new System.Windows.Forms.Label();
             this.pnlHeader.SuspendLayout();
             this.grpFilters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStatement)).BeginInit();
@@ -97,7 +97,7 @@
             this.btnShowReport.Name = "btnShowReport";
             this.btnShowReport.Size = new System.Drawing.Size(120, 30);
             this.btnShowReport.TabIndex = 6;
-            this.btnShowReport.Text = "عرض التقرير";
+            this.btnShowReport.Text = "بحث";
             this.btnShowReport.UseVisualStyleBackColor = false;
             this.btnShowReport.Click += new System.EventHandler(this.btnShowReport_Click);
             // 
@@ -180,16 +180,16 @@
             this.pnlFooter.Size = new System.Drawing.Size(900, 50);
             this.pnlFooter.TabIndex = 3;
             // 
-            // lblFinalBalance
+            // lblTotalIn
             // 
-            this.lblFinalBalance.AutoSize = true;
-            this.lblFinalBalance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblFinalBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
-            this.lblFinalBalance.Location = new System.Drawing.Point(40, 15);
-            this.lblFinalBalance.Name = "lblFinalBalance";
-            this.lblFinalBalance.Size = new System.Drawing.Size(231, 21);
-            this.lblFinalBalance.TabIndex = 0;
-            this.lblFinalBalance.Text = "إجمالي الرصيد في هذه الفترة: 0.00";
+            this.lblTotalIn.AutoSize = true;
+            this.lblTotalIn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblTotalIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
+            this.lblTotalIn.Location = new System.Drawing.Point(625, 15);
+            this.lblTotalIn.Name = "lblTotalIn";
+            this.lblTotalIn.Size = new System.Drawing.Size(237, 21);
+            this.lblTotalIn.TabIndex = 2;
+            this.lblTotalIn.Text = "إجمالي الرصيد في هذه الفترة: 0.00";
             // 
             // lblTotalOut
             // 
@@ -198,20 +198,20 @@
             this.lblTotalOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
             this.lblTotalOut.Location = new System.Drawing.Point(335, 15);
             this.lblTotalOut.Name = "lblTotalOut";
-            this.lblTotalOut.Size = new System.Drawing.Size(231, 21);
+            this.lblTotalOut.Size = new System.Drawing.Size(237, 21);
             this.lblTotalOut.TabIndex = 1;
             this.lblTotalOut.Text = "إجمالي الرصيد في هذه الفترة: 0.00";
             // 
-            // lblTotalIn
+            // lblFinalBalance
             // 
-            this.lblTotalIn.AutoSize = true;
-            this.lblTotalIn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblTotalIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
-            this.lblTotalIn.Location = new System.Drawing.Point(625, 15);
-            this.lblTotalIn.Name = "lblTotalIn";
-            this.lblTotalIn.Size = new System.Drawing.Size(231, 21);
-            this.lblTotalIn.TabIndex = 2;
-            this.lblTotalIn.Text = "إجمالي الرصيد في هذه الفترة: 0.00";
+            this.lblFinalBalance.AutoSize = true;
+            this.lblFinalBalance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblFinalBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
+            this.lblFinalBalance.Location = new System.Drawing.Point(40, 15);
+            this.lblFinalBalance.Name = "lblFinalBalance";
+            this.lblFinalBalance.Size = new System.Drawing.Size(237, 21);
+            this.lblFinalBalance.TabIndex = 0;
+            this.lblFinalBalance.Text = "إجمالي الرصيد في هذه الفترة: 0.00";
             // 
             // FRM_AccountStatement
             // 

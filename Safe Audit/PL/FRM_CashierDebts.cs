@@ -164,5 +164,28 @@ namespace Safe_Audit.PL
         {
             //pnlHeader.MouseDown += (s, ev) => { HelperMethods.MoveForm(this.Handle); };
         }
+
+        private void dgvTransactions_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            // التأكد من أن العمود موجود قبل محاولة الوصول إليه لمنع حدوث خطأ
+            if (dgvTransactions.Columns["TransType"] == null) return;
+
+            foreach (DataGridViewRow row in dgvTransactions.Rows)
+            {
+                string transType = row.Cells["TransType"].Value?.ToString() ?? "";
+
+                // استخدام Contains للبحث داخل النص المدمج (عجز وردية رقم X)
+                if (transType.Contains("عجز وردية"))
+                {
+                    row.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(255, 230, 230); // أحمر فاتح
+                    row.DefaultCellStyle.ForeColor = System.Drawing.Color.DarkRed;
+                }
+                else if (transType.Contains("سداد"))
+                {
+                    row.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(230, 255, 230); // أخضر فاتح
+                    row.DefaultCellStyle.ForeColor = System.Drawing.Color.DarkGreen;
+                }
+            }
+        }
     }
 }

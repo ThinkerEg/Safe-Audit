@@ -37,7 +37,7 @@ namespace Safe_Audit.PL
             if (txtPassword.Text == "كلمة المرور")
             {
                 txtPassword.Text = "";
-                txtPassword.PasswordChar = '●';
+               // txtPassword.PasswordChar = '●';
             }
         }
 
@@ -46,7 +46,7 @@ namespace Safe_Audit.PL
             if (string.IsNullOrWhiteSpace(txtPassword.Text))
             {
                 txtPassword.Text = "كلمة المرور";
-                txtPassword.PasswordChar = '\0';
+               // txtPassword.PasswordChar = '\0';
             }
         }
         private void txtPassword_KeyDown(object sender, KeyEventArgs e)
@@ -110,6 +110,8 @@ namespace Safe_Audit.PL
                 else
                 {
                     MessageBox.Show("بيانات الدخول غير صحيحة أو الحساب مجمد", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    txtPassword.Clear();
+                    txtPassword.Focus();
                 }
             }
             catch (Exception ex)

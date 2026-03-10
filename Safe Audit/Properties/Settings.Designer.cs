@@ -166,5 +166,41 @@ namespace Safe_Audit.Properties {
                 this["BackColor"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("255, 152, 0")]
+        public global::System.Drawing.Color EditColor {
+            get {
+                return ((global::System.Drawing.Color)(this["EditColor"]));
+            }
+            set {
+                this["EditColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("39, 174, 96")]
+        public global::System.Drawing.Color AddColor {
+            get {
+                return ((global::System.Drawing.Color)(this["AddColor"]));
+            }
+            set {
+                this["AddColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("158, 158, 158")]
+        public global::System.Drawing.Color OtherColor {
+            get {
+                return ((global::System.Drawing.Color)(this["OtherColor"]));
+            }
+            set {
+                this["OtherColor"] = value;
+            }
+        }
     }
 }
